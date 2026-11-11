@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Khám phá bộ sưu tập áo bóng đá 34 Tỉnh Thành Việt Nam. Thiết kế độc bản, kết tinh bản sắc văn hóa địa phương, công nghệ thể thao chuyên nghiệp hàng đầu.">
+  <meta name="keywords"
+    content="Áo bóng đá, 34 Tỉnh Thành, Đồ thể thao Việt Nam, Áo thun bóng đá, Thiết kế bóng đá, Bản sắc Việt Nam">
+  <meta name="author" content="Sportswear Campaign">
+  <title>Bộ Sưu Tập Áo Bóng Đá 34 Tỉnh Thành | Bản Sắc Việt Nam</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=20260922-tech-title-15-v2">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,15 90,85 10,85' fill='%23da251d'/%3E%3C/svg%3E">
+</head>
+
+<body>
+
+  <!-- SIGNATURE VN/34 OPENING -->
+  <div class="fusion-opening" aria-hidden="true">
+    <div class="fusion-opening-mark"><span>VN</span><i>/34</i></div>
+    <div class="fusion-opening-line"></div>
+    <p>PROVINCE FOOTBALL COLLECTION · 2026</p>
+  </div>
+  <div class="fusion-progress" aria-hidden="true"><i></i></div>
+
+  <!-- SECTION 01 — NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        VN<span>/34</span>
+        <span class="logo-sub">Province Collection</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Bộ sưu tập</a></li>
+        <li><a href="#collection-grid-sec">34 Tỉnh Thành</a></li>
+        <li><a href="#design-dna">Thiết kế DNA</a></li>
+        <li><a href="#personalization">Tự thiết kế</a></li>
+      </ul>
+
+      <div class="nav-cta" style="display: flex; align-items: center; gap: 1.5rem;">
+        <!-- Audio Feedback Toggle Button -->
+        <button id="sound-toggle" class="sound-toggle-btn" title="Bật/Tắt Âm thanh tương tác"
+          style="color: var(--color-muted); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; padding: 0.5rem; border: 1px solid var(--color-light-gray); background: none; cursor: pointer; border-radius: 0; transition: var(--transition-fast);">
+          <span id="sound-icon">🔇</span>
+        </button>
+
+        <a href="#collection-grid-sec" class="btn-primary">KHÁM PHÁ BST</a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Mở menu"
+        aria-controls="mobile-nav" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#hero">Bộ sưu tập</a>
+      <a href="#collection-grid-sec">34 Tỉnh Thành</a>
+      <a href="#design-dna">Thiết kế DNA</a>
+      <a href="#personalization">Tự thiết kế</a>
+      <a href="#final-cta">Liên hệ tư vấn</a>
+    </div>
+  </nav>
+
+  <!-- SECTION 02 — HERO CAMPAIGN -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-map-silhouette"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="campaign-tag">VIETNAM PROVINCE COLLECTION / 2026</span>
+        <h1 class="hero-title text-gradient">
+          <span>34 TỈNH THÀNH</span>
+          <span class="text-vietnam-gradient">34 BẢN SẮC</span>
+          <span>MỘT VIỆT NAM</span>
+        </h1>
+        <p class="hero-description">
+          Mỗi vùng đất mang một câu chuyện. Mỗi màu áo mang một niềm tự hào.
+          Khám phá Việt Nam qua bộ sưu tập bóng đá đặc biệt được thiết kế độc quyền lấy cảm hứng từ linh hồn văn hóa,
+          lịch sử và địa danh của 34 tỉnh thành cả nước.
+        </p>
+
+        <div class="hero-campaign-status" data-progress="0%">
+          <div class="hero-status-count"><strong>0</strong><span>/ 34</span><small>ĐÃ CÓ THIẾT KẾ</small></div>
+          <div class="hero-status-main">
+            <div class="hero-status-track" role="progressbar" aria-label="Đang kiểm tra hình thiết kế" aria-valuemin="0"
+              aria-valuemax="34" aria-valuenow="0"><i></i></div>
+            <div class="hero-status-question">
+              <p>TỈNH BẠN ĐÃ CÓ THIẾT KẾ CHƯA?</p>
+              <a href="#community-vote">CHƯA CÓ? BÌNH CHỌN NGAY <b>→</b></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#collection-grid-sec" class="btn-primary">KHÁM PHÁ BỘ SƯU TẬP</a>
+          <a href="#collection-grid-sec" class="btn-secondary">TÌM TỈNH CỦA BẠN</a>
+        </div>
+
+        <div class="scroll-indicator" onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'})">
+          <span>Cuộn để khám phá</span>
+          <div class="mouse-icon"></div>
+        </div>
+      </div>
+      <div class="hero-visual hero-map-visual reveal delay-2">
+        <div class="hero-map-frame" data-province-map></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 03 — CAMPAIGN INTRODUCTION -->
+  <section class="intro" id="intro">
+    <div class="container intro-grid">
+      <div class="intro-content reveal">
+        <h2 class="intro-tagline">
+          <span class="intro-title-primary">MỘT VIỆT NAM</span>
+          <span class="intro-title-accent">
+            <span>34 CÂU CHUYỆN</span>
+            <span>THỂ THAO</span>
+          </span>
+        </h2>
+        <p class="intro-text">
+          Từ những đỉnh núi cao trập trùng hiểm trở của miền cực Bắc Hà Giang, qua những dòng sông di sản trữ tình miền
+          Trung cát trắng, tới những vùng đồng bằng màu mỡ chín vàng trĩu phù sa miền Nam Kỳ thú.
+          Bộ sưu tập 34 Tỉnh Thành chuyển hóa trọn vẹn tinh hoa địa phương thành ngôn ngữ thiết kế thể thao hiện đại,
+          tôn vinh lòng kiêu hãnh dân tộc sâu sắc.
+        </p>
+
+        <div class="intro-features">
+          <div class="intro-tag">34 TỈNH THÀNH</div>
+          <div class="intro-tag">34 THIẾT KẾ ĐỘC BẢN</div>
+          <div class="intro-tag">01 TINH THẦN ĐỒNG NHẤT</div>
+        </div>
+      </div>
+
+      <div class="intro-visual reveal delay-2">
+        <img src="ChatGPT Image 15_07_27 15 thg 9, 2026.webp" alt="Tự hào Việt Nam — Bộ sưu tập áo 34 tỉnh thành">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 & 06 — 34 PROVINCE COLLECTION & FILTER -->
+  <section class="collection-section" id="collection-grid-sec">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>THE 34 COLLECTION</h2>
+        <p>Chọn vùng miền hoặc tìm kiếm để khám phá nhanh thiết kế áo đấu quê hương bạn</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Tìm tỉnh / thành phố của bạn..." id="search-input">
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">TẤT CẢ</button>
+          <button class="filter-tab" data-filter="bac">MIỀN BẮC</button>
+          <button class="filter-tab" data-filter="trung">MIỀN TRUNG</button>
+          <button class="filter-tab" data-filter="nam">MIỀN NAM</button>
+        </div>
+      </div>
+
+      <!-- 34 Grid of Cards -->
+      <div class="grid-34" id="collection-grid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07 — FEATURED PROVINCE -->
+  <section class="featured-section" id="featured-province">
+    <div class="featured-bg-text">CÀ MAU</div>
+
+    <div class="container featured-grid">
+      <div class="featured-info reveal delay-2">
+        <span class="featured-label">THIẾT KẾ TIÊU BIỂU</span>
+        <h2 class="featured-name">06 / CÀ MAU</h2>
+        <div class="featured-concept">CỰC NAM — ĐẤT MŨI RỪNG ĐƯỚC</div>
+
+        <p class="featured-story">
+          Nằm ở cực Nam tổ quốc, Cà Mau mang vẻ đẹp hoang sơ kỳ vĩ nơi sông nước giao hòa biển cả.
+          Chiếc áo Cà Mau khoác lên sắc xanh thẫm đại diện cho thảm rừng ngập mặn đước vươn khơi bám đất, điểm xuyết các
+          dải cam rực sáng tựa ánh bình minh và bóng hoàng hôn thẫm rọi trên mũi Đất Mũi.
+          Một biểu tượng cho tinh thần bền bỉ kiên cường trước sóng gió.
+        </p>
+
+        <div class="featured-details-grid">
+          <div class="feat-detail-item">
+            <h4>Bản sắc</h4>
+            <p>Rừng Đước Ngập Mặn</p>
+          </div>
+          <div class="feat-detail-item">
+            <h4>Họa tiết</h4>
+            <p>Hệ vân sóng biển Tây</p>
+          </div>
+          <div class="feat-detail-item">
+            <h4>Phối màu</h4>
+            <div class="color-dots">
+              <span class="color-dot" style="background-color: #0f5132;"></span>
+              <span class="color-dot" style="background-color: #fd7e14;"></span>
+              <span class="color-dot" style="background-color: #ffc107;"></span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-primary" onclick="openDetailsModal('ca-mau')">KHÁM PHÁ CÂU CHUYỆN THIẾT KẾ</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08 — DESIGN DNA -->
+  <section class="dna-section" id="design-dna">
+    <div class="container dna-grid">
+      <div class="dna-content reveal">
+        <h2 class="dna-title">
+          <span class="dna-title-primary">TỪ VÙNG ĐẤT</span>
+          <span class="dna-title-accent">THÀNH THIẾT</span>
+          <span class="dna-title-accent">KẾ ÁO ĐẤU</span>
+        </h2>
+        <p class="dna-desc">
+          Mỗi chiếc áo bóng đá trong bộ sưu tập là kết quả của một hành trình nghiên cứu văn hóa nghiêm ngặt, kết hợp
+          phương pháp đồ họa hiện đại để biến bản sắc lịch sử địa lý thành ngôn ngữ thể thao năng động.
+        </p>
+
+        <div class="dna-steps">
+          <div class="dna-step">
+            <span class="dna-step-num">01</span>
+            <div class="dna-step-info">
+              <h3>NGHIÊN CỨU VĂN HÓA</h3>
+              <p>Khảo sát lịch sử, địa lý, biểu tượng địa phương, màu sắc và linh hồn đại diện cho mỗi tỉnh thành.</p>
+            </div>
+          </div>
+
+          <div class="dna-step">
+            <span class="dna-step-num">02</span>
+            <div class="dna-step-info">
+              <h3>CÁCH ĐIỆU ĐỒ HỌA</h3>
+              <p>Chuyển hóa biểu tượng văn hóa truyền thống thành họa tiết hình học, hoa văn tối giản đương đại.</p>
+            </div>
+          </div>
+
+          <div class="dna-step">
+            <span class="dna-step-num">03</span>
+            <div class="dna-step-info">
+              <h3>CẤU TRÚC ÁO BÓNG ĐÁ</h3>
+              <p>Phối hợp màu sắc, dải viền, bo cổ, bo tay áo và thiết kế logo đặc trưng tôn vinh tinh thần bóng đá.</p>
+            </div>
+          </div>
+
+          <div class="dna-step">
+            <span class="dna-step-num">04</span>
+            <div class="dna-step-info">
+              <h3>HOÀN THIỆN CHẤT LIỆU</h3>
+              <p>Tinh chỉnh công nghệ in chuyển nhiệt sắc nét và tối ưu sợi vải thể thao hỗ trợ vận động êm ái.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 09 — PRODUCT TECHNOLOGY -->
+  <section class="tech-section" id="product-tech">
+    <div class="tech-hotspots" aria-label="Các điểm nổi bật trên áo đấu">
+      <button class="tech-hotspot hotspot-collar active" type="button" data-point="collar"
+        aria-label="01 — Bo cổ phối màu tinh tế"><span>01</span></button>
+      <button class="tech-hotspot hotspot-fabric" type="button" data-point="fabric"
+        aria-label="02 — Phối tay trẻ trung, năng động"><span>02</span></button>
+      <button class="tech-hotspot hotspot-badge" type="button" data-point="badge"
+        aria-label="03 — Phối hông hiện đại, thể thao"><span>03</span></button>
+      <button class="tech-hotspot hotspot-fit" type="button" data-point="fit"
+        aria-label="04 — Chạy sọc cao cấp"><span>04</span></button>
+      <button class="tech-hotspot hotspot-sleeve" type="button" data-point="sleeve"
+        aria-label="05 — Tay áo vừa vặn, thoải mái"><span>05</span></button>
+    </div>
+    <div class="container tech-layout">
+      <div class="tech-info reveal delay-2">
+        <span class="tech-tag">CÔNG NGHỆ MAY ĐỘC QUYỀN</span>
+        <h2 class="tech-title"><span>KHÔNG CHỈ LÀ</span> <span>THIẾT KẾ, ĐƯỢC</span> <span>TẠO RA ĐỂ</span> <span>CHUYỂN ĐỘNG</span></h2>
+        <div class="tech-visual reveal">
+          <img class="tech-model-image" src="assets/tech-hanoi-model.webp" alt="Người mẫu mặc áo đấu Hà Nội đỏ vàng">
+          <div class="tech-hotspots tech-mobile-hotspots" aria-label="Điểm nổi bật trên áo">
+            <button class="tech-hotspot hotspot-collar active" type="button" data-point="collar" aria-label="01 — Bo cổ phối màu tinh tế"><span>01</span></button>
+            <button class="tech-hotspot hotspot-fabric" type="button" data-point="fabric" aria-label="02 — Phối tay trẻ trung, năng động"><span>02</span></button>
+            <button class="tech-hotspot hotspot-badge" type="button" data-point="badge" aria-label="03 — Phối hông hiện đại, thể thao"><span>03</span></button>
+            <button class="tech-hotspot hotspot-fit" type="button" data-point="fit" aria-label="04 — Chạy sọc cao cấp"><span>04</span></button>
+            <button class="tech-hotspot hotspot-sleeve" type="button" data-point="sleeve" aria-label="05 — Tay áo vừa vặn, thoải mái"><span>05</span></button>
+          </div>
+        </div>
+
+        <div class="tech-cards">
+          <div class="tech-card active" data-point="collar">
+            <div class="tech-card-icon">01</div>
+            <div class="tech-card-text">
+              <h3>BO CỔ PHỐI MÀU TINH TẾ</h3>
+              <p>Thiết kế cổ V phối vàng nổi bật trên nền đỏ, tạo điểm nhấn sắc sảo và giữ cảm giác mềm mại, thoải mái
+                khi mặc.</p>
+            </div>
+          </div>
+
+          <div class="tech-card" data-point="fabric">
+            <div class="tech-card-icon">02</div>
+            <div class="tech-card-text">
+              <h3>PHỐI TAY TRẺ TRUNG, NĂNG ĐỘNG</h3>
+              <p>Mảng phối vàng ở tay áo tạo tương phản hiện đại, mang lại vẻ khỏe khoắn và giàu năng lượng cho tổng thể
+                trang phục.</p>
+            </div>
+          </div>
+
+          <div class="tech-card" data-point="badge">
+            <div class="tech-card-icon">03</div>
+            <div class="tech-card-text">
+              <h3>PHỐI HÔNG HIỆN ĐẠI, THỂ THAO</h3>
+              <p>Đường phối vàng chạy dọc thân hông giúp phom áo trông gọn gàng hơn, tôn dáng và tăng chất thể thao khi
+                vận động.</p>
+            </div>
+          </div>
+
+          <div class="tech-card" data-point="fit">
+            <div class="tech-card-icon">04</div>
+            <div class="tech-card-text">
+              <h3>CHẠY SỌC CAO CẤP</h3>
+              <p>Hệ sọc vàng chạy liền mạch từ vai xuống giữa tay áo, tạo chiều sâu thị giác và hoàn thiện vẻ ngoài đậm
+                chất thi đấu.</p>
+            </div>
+          </div>
+
+          <div class="tech-card" data-point="sleeve">
+            <div class="tech-card-icon">05</div>
+            <div class="tech-card-text">
+              <h3>TAY ÁO VỪA VẶN, THOẢI MÁI</h3>
+              <p>Phom tay được cắt gọn, ôm vừa phải để cử động tự nhiên; chất liệu mềm nhẹ giúp người mặc luôn dễ chịu
+                suốt trận đấu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — 34 JERSEYS HORIZONTAL SHOWCASE -->
+  <section class="showcase-section">
+    <div class="container text-center reveal">
+      <h2 class="intro-tagline" style="font-size: var(--fs-h2); text-align: center;">34 SẮC MÀU – CHUNG MỘT TINH THẦN
+        VIỆT</h2>
+    </div>
+
+    <div class="showcase-marquee-container">
+      <div class="marquee-content" id="marquee-content">
+        <!-- Injected & duplicated via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — NATIONAL UNITY CAMPAIGN -->
+  <section class="unity-section" id="unity">
+    <div class="container unity-content reveal">
+      <h2 class="unity-title">
+        <span>KHÁC BIỆT TRONG</span>
+        <span>BẢN SẮC</span>
+        <span>THỐNG NHẤT TRONG</span>
+        <span>TINH THẦN</span>
+      </h2>
+      <p class="unity-desc">
+        34 vùng đất. 34 sắc màu văn hóa khác biệt. 34 câu chuyện lịch sử hào hùng riêng biệt.
+        Nhưng khi chúng ta cùng đồng hành khoác lên mình tinh thần đam mê thể thao bất diệt, tất cả đều mang chung một
+        niềm tự hào cao cả thiêng liêng:
+      </p>
+      <div class="unity-vietnam" aria-label="Việt Nam">
+        <span>VIỆT</span>
+        <span>NAM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — PRODUCT DETAIL GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header gallery-editorial-header reveal">
+        <span class="gallery-editorial-kicker">THIẾT KẾ / CHẤT LIỆU</span>
+        <h2><span>ĐƯỢC HOÀN THIỆN</span><span>ĐẾN TỪNG CHI TIẾT</span></h2>
+        <p>Mỗi đường nét đều được cân nhắc để tạo nên một thiết kế chỉn chu và khác biệt.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item col-2 row-2">
+          <img src="assets/hero_jersey_showcase.webp" alt="Chi tiết phom áo đấu bóng đá">
+          <div class="gallery-overlay">
+            <h4>Mặt trước phom áo đấu</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/fabric_texture_detail.webp" alt="Cận cảnh sợi vải lưới thoáng mát">
+          <div class="gallery-overlay">
+            <h4>Bề mặt vải thoáng khí</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/featured_camau_jersey.webp" alt="Cận cảnh chi tiết áo Cà Mau">
+          <div class="gallery-overlay">
+            <h4>Cổ áo tiêu biểu</h4>
+          </div>
+        </div>
+        <div class="gallery-item col-2">
+          <img src="assets/gallery-back-jerseys.webp" alt="Bộ sưu tập mặt sau áo đấu Việt Nam">
+          <div class="gallery-overlay">
+            <h4>Mặt sau mang dấu ấn quê hương</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13 — PERSONALIZATION & CUSTOMIZER -->
+  <section class="customizer-section" id="personalization">
+    <div class="container customizer-grid">
+      <div class="customizer-preview reveal">
+        <div class="customizer-preview-meta">
+          <span>PHÒNG THIẾT KẾ / 34 TỈNH THÀNH</span>
+          <span class="customizer-live"><i></i> XEM TRỰC TIẾP</span>
+        </div>
+        <div id="customizer-preview"></div>
+        <div class="customizer-preview-controls">
+          <button class="view-btn active" data-view="back">Thân sau</button>
+          <button class="view-btn" data-view="front">Thân trước</button>
+          <button class="view-btn" data-view="shorts">Quần</button>
+        </div>
+      </div>
+
+      <div class="customizer-options reveal delay-2">
+        <span class="customizer-eyebrow">CÁ NHÂN HOÁ MẪU ÁO</span>
+        <h2>ĐỘI BÓNG<br> CỦA BẠN</h2>
+        <p>Cá nhân hóa chiếc áo đấu quê hương. Nhập tên và số áo yêu thích của bạn để chiêm ngưỡng bản mô phỏng trực
+          quan tức thì.</p>
+
+        <div class="customizer-form" id="customizer-form">
+          <div class="form-group">
+            <label for="cust-province">Chọn Tỉnh Thành</label>
+            <select id="cust-province">
+              <!-- Injected via JS -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cust-name">Tên Của Bạn (Tối đa 16 ký tự)</label>
+            <input type="text" id="cust-name" value="NAME" maxlength="16" placeholder="Nhập tên của bạn...">
+          </div>
+
+          <div class="customizer-number-logo-row">
+            <div class="form-group">
+              <label for="cust-number">Số Áo Của Bạn (00 - 99)</label>
+            <input type="number" id="cust-number" value="01" min="0" max="99" placeholder="Nhập số áo...">
+            </div>
+
+            <div class="form-group customizer-logo-group">
+              <label for="cust-logo">Logo của bạn</label>
+              <div class="customizer-logo-upload">
+                <label class="customizer-logo-upload-btn" for="cust-logo">TẢI LOGO</label>
+                <input type="file" id="cust-logo" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+                <span id="cust-logo-status">PNG, JPG, WEBP hoặc SVG</span>
+                <button type="button" id="cust-logo-clear" hidden>XÓA</button>
+              </div>
+              <small>Bấm logo để chỉnh độ lớn, kéo logo để đổi vị trí.</small>
+            </div>
+          </div>
+
+          <button class="btn-primary" id="customizer-order-button" type="button">
+            YÊU CẦU ĐẶT IN BẢN THIẾT KẾ NÀY
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 14 — SOCIALS & COMMUNITY -->
+  <section class="social-section" id="social">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>WEAR YOUR HOMETOWN</h2>
+        <p>Khoác lên niềm tự hào quê hương. Chia sẻ hình ảnh của bạn cùng cộng đồng với hashtag
+          <strong>#34TinhThanh</strong></p>
+      </div>
+
+      <div class="social-grid reveal">
+        <!-- Card 1 -->
+        <div class="social-card">
+          <div class="social-img-box">
+            <img src="assets/featured_camau_jersey.webp" alt="Fan wearing Cà Mau jersey">
+          </div>
+          <div class="social-meta">
+            <div class="social-user">@minhnhut.fc</div>
+            <div class="social-tag">#34TinhThanh #CaMau</div>
+          </div>
+          <div class="social-card-overlay">
+            <div class="social-icon-btn">IG</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="social-card">
+          <div class="social-img-box">
+            <img src="assets/hero_jersey_showcase.webp" alt="Fan wearing Ha Noi jersey">
+          </div>
+          <div class="social-meta">
+            <div class="social-user">@3mienfootballer</div>
+            <div class="social-tag">#34TinhThanh #HaNoi</div>
+          </div>
+          <div class="social-card-overlay">
+            <div class="social-icon-btn">IG</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="social-card">
+          <div class="social-img-box">
+            <img src="assets/fabric_texture_detail.webp" alt="Fan wearing Da Nang jersey">
+          </div>
+          <div class="social-meta">
+            <div class="social-user">@hue.fc</div>
+            <div class="social-tag">#34TinhThanh #DaNang</div>
+          </div>
+          <div class="social-card-overlay">
+            <div class="social-icon-btn">IG</div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="social-card">
+          <div class="social-img-box">
+            <img src="assets/tp-hcm-jersey.webp" alt="Mẫu áo Thành phố Hồ Chí Minh">
+          </div>
+          <div class="social-meta">
+            <div class="social-user">@nghean.streetstyle</div>
+            <div class="social-tag">#34TinhThanh #TPHCM</div>
+          </div>
+          <div class="social-card-overlay">
+            <div class="social-icon-btn">IG</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="text-align: center;">
+        <button type="button" class="btn-secondary" id="share-hometown">CHIA SẺ MÀU ÁO QUÊ HƯƠNG BẠN</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY VOTE — NEXT HOMETOWN DESIGN -->
+  <section class="vote-section" id="community-vote">
+    <div class="container vote-layout">
+      <div class="vote-intro reveal">
+        <span class="campaign-tag">COMMUNITY CHOICE / VN 34</span>
+        <h2 class="vote-title">
+          <span class="vote-title-pride">TỰ HÀO</span>
+          <span class="vote-title-place">QUÊ HƯƠNG</span>
+          <span class="vote-title-cta">CHỐT SUẤT <b>35!</b></span>
+        </h2>
+        <p>34 phiên bản đã thành hình. Phiên bản thứ 35 đang chờ lá phiếu của bạn.</p>
+        <div class="vote-total"><strong id="vote-total">0</strong><span>LƯỢT BÌNH CHỌN</span></div>
+      </div>
+      <div class="vote-box reveal delay-2">
+        <div class="vote-form">
+          <label for="vote-province">CHỌN QUÊ HƯƠNG CỦA BẠN</label>
+          <select id="vote-province" aria-label="Chọn quê hương để bình chọn"></select>
+          <button class="btn-primary" id="vote-submit">BÌNH CHỌN NGAY <span>→</span></button>
+          <p class="vote-message" id="vote-message" aria-live="polite"></p>
+        </div>
+        <div class="vote-selected-result" id="vote-selected-result" hidden aria-live="polite"></div>
+        <div class="vote-ranking">
+          <div class="vote-ranking-head">
+            <h3>ĐANG ĐƯỢC MONG CHỜ</h3><span>TOP 03</span>
+          </div>
+          <div id="vote-list"></div>
+        </div>
+        <p class="vote-demo-note">Phiếu của bạn được lưu trên trình duyệt này.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 15 — FINAL CTA -->
+  <section class="final-cta" id="final-cta">
+    <div class="final-cta-glow"></div>
+    <div class="container final-cta-content reveal">
+      <h2>BẠN ĐẾN TỪ ĐÂU?</h2>
+      <p>Hãy tìm màu áo của quê hương mình và mang bản sắc tự hào ra sân bóng ngay hôm nay.</p>
+
+      <div class="final-cta-buttons">
+        <a href="#collection-grid-sec" class="btn-primary">KHÁM PHÁ 34 THIẾT KẾ</a>
+        <button type="button" class="btn-secondary" id="contact-tailoring">LIÊN HỆ ĐẶT MAY</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION 16 — FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="#" class="logo">
+          VN<span>/34</span>
+          <span class="logo-sub">Province Collection</span>
+        </a>
+        <p>Bộ sưu tập áo bóng đá truyền cảm hứng văn hóa lớn nhất Việt Nam. Thiết kế độc quyền và sản xuất cao cấp.</p>
+        <div class="social-links">
+          <a href="https://zalo.me/0909362079" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Zalo DNY Sport">
+            <img src="assets/LOGO%20MXH/ZALO.png" alt="" aria-hidden="true">
+          </a>
+          <a href="https://www.facebook.com/DNYsportSince2015/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook DNY Sport">
+            <img src="assets/LOGO%20MXH/FACEBOOK.png" alt="" aria-hidden="true">
+          </a>
+          <a href="https://www.tiktok.com/@dnycustomuniform?_r=1&amp;_t=ZS-98NEsjCUdqn" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok DNY Custom Uniform">
+            <img src="assets/LOGO%20MXH/TIKTOK.png" alt="" aria-hidden="true">
+          </a>
+          <a href="https://www.youtube.com/@DNYSportSince2015" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube DNY Sport">
+            <img src="assets/LOGO%20MXH/YOUTUBE.png" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bộ Sưu Tập</h4>
+        <ul class="footer-links">
+          <li><a href="#collection-grid-sec">Tất cả áo đấu</a></li>
+          <li><a href="#featured-province">Mẫu tiêu biểu</a></li>
+          <li><a href="#personalization">Thiết kế tùy chọn</a></li>
+          <li><a href="#product-tech">Công nghệ dệt may</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>34 Tỉnh Thành</h4>
+        <ul class="footer-links">
+          <li><a href="#collection-grid-sec">Khu vực Miền Bắc</a></li>
+          <li><a href="#collection-grid-sec">Khu vực Miền Trung</a></li>
+          <li><a href="#collection-grid-sec">Khu vực Miền Nam</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hỗ trợ / Liên hệ</h4>
+        <ul class="footer-links">
+          <li><a href="#">Hướng dẫn chọn Size</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Đặt may theo đội nhóm</a></li>
+          <li><a href="https://zalo.me/0909362079" target="_blank" rel="noopener noreferrer">Zalo: 0909 362 079</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 VN/34 Collection. Bảo lưu mọi quyền.</p>
+      <div class="footer-signature">DESIGNED IN VIETNAM</div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PRODUCT DETAIL VIEW MODAL -->
+  <button class="fusion-match-fab" id="fusion-match-open" aria-label="Để hệ thống đoán quê hương của bạn">ĐOÁN
+    QUÊ<br>CỦA BẠN</button>
+  <button class="order-fab" id="order-fab" type="button" aria-label="Khám phá nội dung trang">KHÁM PHÁ<br>TRANG</button>
+  <nav class="mobile-bottom-actions" aria-label="Thao tác nhanh">
+    <a href="#collection-grid-sec">Mẫu áo</a>
+    <a href="#personalization">Tự thiết kế</a>
+    <button id="mobile-fusion-open" type="button">Đoán quê</button>
+  </nav>
+  <div class="order-nudge" id="order-nudge" aria-live="polite">⚡ CÙNG KHÁM PHÁ HÀNH TRÌNH 34 TỈNH THÀNH <b>→</b></div>
+  <div class="guess-nudge" id="guess-nudge" role="button" tabindex="0" aria-label="Bắt đầu trải nghiệm đoán quê">
+    <button class="guess-nudge-close" aria-label="Đóng lời mời">×</button>
+    <span>VN / 34 THÁCH BẠN</span>
+    <strong>CHỈ 3 CÂU HỎI —<br>CHÚNG TÔI ĐOÁN ĐƯỢC QUÊ BẠN?</strong>
+    <small>THỬ NGAY <b>→</b></small>
+  </div>
+  <div class="fusion-match" id="fusion-match" role="dialog" aria-modal="true" aria-label="Đoán quê hương của bạn">
+    <div class="fusion-match-panel">
+      <button class="fusion-match-close" aria-label="Đóng">×</button>
+      <div class="fusion-match-art">
+        <div id="fusion-match-jersey"></div>
+      </div>
+      <div class="fusion-match-content">
+        <div class="fusion-step active" data-step="1"><span id="folk-progress">CÂU 01 / 05</span>
+          <h3 class="folk-heading" id="folk-question">ĐỂ CHÚNG TÔI<br>ĐOÁN QUÊ BẠN</h3>
+          <p class="folk-intro" id="folk-quote">Trả lời theo ký ức đầu tiên xuất hiện trong bạn.</p>
+          <div class="fusion-options folk-choice-grid" id="folk-options"></div>
+          <p class="folk-feedback" id="folk-feedback" aria-live="polite"></p>
+        </div>
+        <div class="fusion-step fusion-result" data-step="3"><span>DỰ ĐOÁN QUÊ HƯƠNG / VN 34</span>
+          <h3 id="fusion-result-name">HÀ NỘI</h3>
+          <p id="fusion-result-copy"></p>
+          <div class="fusion-result-actions"><button class="btn-primary" id="fusion-result-view">ĐÚNG — XEM MẪU
+              ÁO</button><button id="fusion-match-again">ĐOÁN LẠI</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-modal" id="detail-modal">
+    <div class="modal-content">
+      <!-- Injected dynamically via JS inside app.js -->
+    </div>
+  </div>
+
+  <div class="order-modal" id="order-modal" aria-hidden="true">
+    <div class="order-form-card" role="dialog" aria-modal="true" aria-labelledby="order-form-title">
+      <button class="order-form-close" type="button" aria-label="Đóng form đặt áo">×</button>
+      <div class="order-form-heading">
+        <span>VN / 34 — ĐẶT ÁO THIẾT KẾ</span>
+        <h2 id="order-form-title">THÔNG TIN ĐẶT ÁO</h2>
+        <p>Điền thông tin để đội ngũ xác nhận mẫu và liên hệ với bạn.</p>
+      </div>
+      <form id="order-form">
+        <div class="order-form-grid">
+          <label class="order-field order-field-wide">
+            <span>Họ tên</span>
+            <input id="order-fullname" name="fullname" type="text" autocomplete="name" placeholder="Nguyễn Văn A"
+              required>
+          </label>
+          <label class="order-field order-field-wide">
+            <span>Địa chỉ</span>
+            <textarea id="order-address" name="address" rows="3" autocomplete="street-address"
+              placeholder="Số nhà, đường, phường/xã, tỉnh/thành" required></textarea>
+          </label>
+          <label class="order-field order-field-wide">
+            <span>Số điện thoại</span>
+            <input id="order-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+              placeholder="09xx xxx xxx" pattern="[0-9+ .()-]{8,15}" required>
+          </label>
+          <label class="order-field order-field-wide">
+            <span>Email</span>
+            <input id="order-email" name="email" type="email" inputmode="email" autocomplete="email"
+              placeholder="email@cuaban.com" required>
+          </label>
+          <label class="order-field order-field-wide">
+            <span>Mẫu thiết kế</span>
+            <select id="order-design" name="design" aria-label="Chọn mẫu thiết kế theo tỉnh thành"></select>
+          </label>
+          <div class="order-design-preview order-field-wide" aria-live="polite">
+            <div class="order-design-preview-copy">
+              <span>Xem mẫu thiết kế</span>
+              <strong id="order-design-preview-name">—</strong>
+            </div>
+            <img id="order-design-preview-image" src="" alt="Xem trước mẫu áo">
+          </div>
+          <fieldset class="order-print-fields order-field-wide">
+            <legend>Tên + số trên áo</legend>
+            <label class="order-field">
+              <span>Tên in áo</span>
+              <input id="order-print-name" name="printName" type="text" maxlength="16" placeholder="VIETNAM" required>
+            </label>
+            <label class="order-field order-number-field">
+              <span>Số áo</span>
+              <input id="order-print-number" name="printNumber" type="text" maxlength="2" inputmode="numeric"
+                pattern="[0-9]{1,2}" placeholder="34" required>
+            </label>
+          </fieldset>
+        </div>
+        <p class="order-form-message" id="order-form-message" role="status"></p>
+        <button class="order-submit" type="submit">GỬI THÔNG TIN ĐẶT ÁO <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+    <div class="gallery-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="gallery-lightbox-caption">
+      <button class="gallery-lightbox-close" type="button" aria-label="Đóng xem ảnh">×</button>
+      <img class="gallery-lightbox-image" src="" alt="">
+      <p class="gallery-lightbox-caption" id="gallery-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Script -->
+  <script src="province-map.js?v=20260921-2"></script>
+  <script src="app.js?v=20260921-20"></script>
+  <div class="share-modal" id="contact-modal" aria-hidden="true">
+    <div class="share-panel contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <button class="share-close" type="button" aria-label="Đóng">×</button>
+      <span>34 TỈNH THÀNH / ĐẶT MAY THEO YÊU CẦU</span>
+      <h2 id="contact-title">CÙNG TẠO NÊN<br>MẪU ÁO CỦA BẠN</h2>
+      <p>Đội ngũ tư vấn sẽ đồng hành từ chọn mẫu, cá nhân hoá đến đặt may.</p>
+      <div class="contact-layout">
+        <div class="contact-actions">
+          <div class="contact-methods">
+            <a href="http://zalo.me/0909362079" target="_blank" rel="noopener"><b>Z</b><span><small>NHẮN TIN ZALO</small><strong>0909 362 079 · zalo.me/0909362079</strong></span></a>
+            <a href="https://www.facebook.com/DNYsportSince2015/" target="_blank" rel="noopener"><b>f</b><span><small>FACEBOOK DNY SPORT</small><strong>Nhắn tin với chúng tôi trên Facebook</strong></span></a>
+          </div>
+          <button class="contact-copy" type="button">SAO CHÉP SỐ ZALO <b>↗</b></button>
+        </div>
+        <a class="contact-zalo-qr" href="http://zalo.me/0909362079" target="_blank" rel="noopener">
+          <img src="assets/zalo-qr-0909362079.webp" alt="Mã QR Zalo 0909 362 079">
+          <span><strong>QUÉT MÃ QR ZALO</strong><small>Mở Zalo để liên hệ nhanh</small></span>
+        </a>
+      </div>
+      <p class="share-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="share-modal" id="share-modal" aria-hidden="true">
+    <div class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title">
+      <button class="share-close" type="button" aria-label="Đóng">×</button>
+      <span>34 TỈNH THÀNH / CÙNG LAN TOẢ</span>
+      <h2 id="share-title">CHIA SẺ MÀU ÁO<br>QUÊ HƯƠNG BẠN</h2>
+      <p>Gửi hành trình khám phá 34 bản sắc Việt Nam đến bạn bè.</p>
+      <div class="share-options">
+        <button type="button" data-share="facebook"><b>f</b><small>Facebook</small></button>
+        <button type="button" data-share="zalo"><b>Z</b><small>Zalo</small></button>
+        <button type="button" data-share="messenger"><b>✦</b><small>Messenger</small></button>
+        <button type="button" data-share="copy"><b>↗</b><small>Sao chép link</small></button>
+        <button type="button" data-share="native"><b>•••</b><small>Chia sẻ khác</small></button>
+      </div>
+      <p class="share-status" id="share-status" aria-live="polite"></p>
+    </div>
+  </div>
+</body>
+
+</html>
