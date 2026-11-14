@@ -525,17 +525,178 @@ const LEGACY_PROVINCES_DATA = [
 // Source: National Assembly Resolution 202/2025/QH15.  This is deliberately
 // kept as the single source of truth for every grid, filter, map marker and
 // customizer selector on the site.
+// Verified build-time asset manifest: no network probing on page load.
 const DESIGN_ASSETS = Object.freeze({
-  "tp-hcm": Object.freeze({
-    front: "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-MATTRUOC.webp",
-    back: "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-MATSAU.webp",
-    shorts: "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-QUAN.webp"
-  }),
-  "can-tho": Object.freeze({
-    front: "assets/THIẾT KẾ ÁO/1x/CANTHO-MATTRUOC.webp",
-    back: "assets/THIẾT KẾ ÁO/1x/CANTHO-MATSAU.webp",
-    shorts: "assets/THIẾT KẾ ÁO/1x/CANTHO-QUAN.webp"
-  })
+  "ha-noi": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HANOI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HANOI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HANOI-QUAN.webp"
+  },
+  "cao-bang": {
+    "front": "assets/THIẾT KẾ ÁO/1x/CAOBANG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/CAOBANG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/CAOBANG-QUAN.webp"
+  },
+  "tuyen-quang": {
+    "front": "assets/THIẾT KẾ ÁO/1x/TUYENQUANG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/TUYENQUANG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/TUYENQUANG-QUAN.webp"
+  },
+  "lao-cai": {
+    "front": "assets/THIẾT KẾ ÁO/1x/LAOCAI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/LAOCAI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/LAOCAI-QUAN.webp"
+  },
+  "thai-nguyen": {
+    "front": "assets/THIẾT KẾ ÁO/1x/THAINGUYEN-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/THAINGUYEN-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/THAINGUYEN-QUAN.webp"
+  },
+  "phu-tho": {
+    "front": "assets/THIẾT KẾ ÁO/1x/PHUTHO-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/PHUTHO-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/PHUTHO-QUAN.webp"
+  },
+  "bac-ninh": {
+    "front": "assets/THIẾT KẾ ÁO/1x/BACNINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/BACNINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/BACNINH-QUAN.webp"
+  },
+  "hung-yen": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HUNGYEN-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HUNGYEN-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HUNGYEN-QUAN.webp"
+  },
+  "hai-phong": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HAIPHONG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HAIPHONG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HAIPHONG-QUAN.webp"
+  },
+  "quang-ninh": {
+    "front": "assets/THIẾT KẾ ÁO/1x/QUANGNINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/QUANGNINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/QUANGNINH-QUAN.webp"
+  },
+  "ninh-binh": {
+    "front": "assets/THIẾT KẾ ÁO/1x/NINHBINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/NINHBINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/NINHBINH-QUAN.webp"
+  },
+  "son-la": {
+    "front": "assets/THIẾT KẾ ÁO/1x/SONLA-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/SONLA-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/SONLA-QUAN.webp"
+  },
+  "dien-bien": {
+    "front": "assets/THIẾT KẾ ÁO/1x/DIENBIEN-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/DIENBIEN-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/DIENBIEN-QUAN.webp"
+  },
+  "lai-chau": {
+    "front": "assets/THIẾT KẾ ÁO/1x/LAICHAU-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/LAICHAU-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/LAICHAU-QUAN.webp"
+  },
+  "lang-son": {
+    "front": "assets/THIẾT KẾ ÁO/1x/LANGSON-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/LANGSON-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/LANGSON-QUAN.webp"
+  },
+  "thanh-hoa": {
+    "front": "assets/THIẾT KẾ ÁO/1x/THANHHOA-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/THANHHOA-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/THANHHOA-QUAN.webp"
+  },
+  "nghe-an": {
+    "front": "assets/THIẾT KẾ ÁO/1x/NGHEAN-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/NGHEAN-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/NGHEAN-QUAN.webp"
+  },
+  "ha-tinh": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HATINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HATINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HATINH-QUAN.webp"
+  },
+  "quang-tri": {
+    "front": "assets/THIẾT KẾ ÁO/1x/QUANGTRI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/QUANGTRI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/QUANGTRI-QUAN.webp"
+  },
+  "hue": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HUE-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HUE-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HUE-QUAN.webp"
+  },
+  "da-nang": {
+    "front": "assets/THIẾT KẾ ÁO/1x/DANANG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/DANANG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/DANANG-QUAN.webp"
+  },
+  "quang-ngai": {
+    "front": "assets/THIẾT KẾ ÁO/1x/QUANGNGAI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/QUANGNGAI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/QUANGNGAI-QUAN.webp"
+  },
+  "gia-lai": {
+    "front": "assets/THIẾT KẾ ÁO/1x/GIALAI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/GIALAI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/GIALAI-QUAN.webp"
+  },
+  "khanh-hoa": {
+    "front": "assets/THIẾT KẾ ÁO/1x/KHANHHOA-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/KHANHHOA-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/KHANHHOA-QUAN.webp"
+  },
+  "dak-lak": {
+    "front": "assets/THIẾT KẾ ÁO/1x/DAKLAK-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/DAKLAK-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/DAKLAK-QUAN.webp"
+  },
+  "lam-dong": {
+    "front": "assets/THIẾT KẾ ÁO/1x/LAMDONG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/LAMDONG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/LAMDONG-QUAN.webp"
+  },
+  "tp-hcm": {
+    "front": "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/HO CHI MINH-QUAN.webp"
+  },
+  "dong-nai": {
+    "front": "assets/THIẾT KẾ ÁO/1x/DONGNAI-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/DONGNAI-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/DONGNAI-QUAN.webp"
+  },
+  "tay-ninh": {
+    "front": "assets/THIẾT KẾ ÁO/1x/TAYNINH-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/TAYNINH-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/TAYNINH-QUAN.webp"
+  },
+  "can-tho": {
+    "front": "assets/THIẾT KẾ ÁO/1x/CANTHO-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/CANTHO-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/CANTHO-QUAN.webp"
+  },
+  "vinh-long": {
+    "front": "assets/THIẾT KẾ ÁO/1x/VINHLONG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/VINHLONG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/VINHLONG-QUAN.webp"
+  },
+  "dong-thap": {
+    "front": "assets/THIẾT KẾ ÁO/1x/DONGTHAP-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/DONGTHAP-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/DONGTHAP-QUAN.webp"
+  },
+  "ca-mau": {
+    "front": "assets/THIẾT KẾ ÁO/1x/CAMAU-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/CAMAU-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/CAMAU-QUAN.webp"
+  },
+  "an-giang": {
+    "front": "assets/THIẾT KẾ ÁO/1x/ANGIANG-MATTRUOC.webp",
+    "back": "assets/THIẾT KẾ ÁO/1x/ANGIANG-MATSAU.webp",
+    "shorts": "assets/THIẾT KẾ ÁO/1x/ANGIANG-QUAN.webp"
+  }
 });
 const DESIGN_ASSET_DIRECTORY = "assets/THIẾT KẾ ÁO/1x/";
 
@@ -644,25 +805,8 @@ function doesDesignImageExist(src) {
   });
 }
 
-async function attachAvailableDesignAssets() {
-  let didAttach = false;
-  for (const province of PROVINCES_DATA) {
-    for (const key of makeDesignAssetKeys(province)) {
-      const images = {
-        front: `${DESIGN_ASSET_DIRECTORY}${key}-MATTRUOC.webp`,
-        back: `${DESIGN_ASSET_DIRECTORY}${key}-MATSAU.webp`,
-        shorts: `${DESIGN_ASSET_DIRECTORY}${key}-QUAN.webp`
-      };
-      const isCompleteSet = (await Promise.all(Object.values(images).map(doesDesignImageExist))).every(Boolean);
-      if (isCompleteSet) {
-        const previousImages = province.images;
-        province.images = images;
-        didAttach ||= !previousImages || Object.values(images).some((src, index) => src !== Object.values(previousImages)[index]);
-        break;
-      }
-    }
-  }
-  return didAttach;
+function attachAvailableDesignAssets() {
+  return Promise.resolve(false); // Artwork is already linked by the verified manifest.
 }
 
 // Mã biển số đại diện của từng đơn vị hành chính cấp tỉnh trong bộ sưu tập.
@@ -1126,7 +1270,7 @@ function renderGrid(data) {
           </div>
           <div class="card-jersey-area">
             ${p.images
-              ? `<img class="card-province-photo" src="${p.images.front}" alt="Mặt trước áo ${p.name}">`
+              ? `<img loading="lazy" decoding="async" class="card-province-photo" src="${p.images.front}" alt="Mặt trước áo ${p.name}">`
               : generateJerseySVG(p, 'front')}
           </div>
           <div class="card-bottom">
@@ -2746,7 +2890,7 @@ function initShowcaseMarquee() {
     
     const frontImg = p.images?.front || (DESIGN_ASSETS[p.slug]?.front);
     const visualHTML = frontImg
-      ? `<img src="${frontImg}" alt="${p.name}" class="marquee-jersey-img">`
+      ? `<img loading="lazy" decoding="async" src="${frontImg}" alt="${p.name}" class="marquee-jersey-img">`
       : generateJerseySVG(p, 'front');
 
     item.innerHTML = `
