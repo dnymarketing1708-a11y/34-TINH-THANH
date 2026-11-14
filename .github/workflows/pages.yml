@@ -19,7 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Extract original website
-        run: unzip -q landing-page-publish.zip -d _site
+        run: |
+          unzip -q landing-page-publish.zip -d _site
+          cp index.html index.css app.js province-map.js pricing.js _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

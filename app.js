@@ -744,8 +744,14 @@ function registerProvinceFonts() {
     const key = province.name.replace(/^Thành phố\s+/i, '')
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       .replace(/[đĐ]/g, 'd').toUpperCase().replace(/[^A-Z0-9]/g, '');
-    const sources = [['ttf', 'truetype'], ['otf', 'opentype'], ['woff2', 'woff2'], ['woff', 'woff']]
-      .map(([extension, format]) => `url("assets/FONT 34 TINH THANH/${key}-Regular.${extension}") format("${format}")`);
+    const encodedDir = encodeURI('assets/FONT 34 TINH THANH');
+    const sources = [
+      `url("${encodedDir}/${key}-Regular.ttf") format("truetype")`,
+      `url("${encodedDir}/${key}-REGULAR.TTF") format("truetype")`,
+      `url("${encodedDir}/${key}-Regular.otf") format("opentype")`,
+      `url("${encodedDir}/${key}-Regular.woff2") format("woff2")`,
+      `url("${encodedDir}/${key}-Regular.woff") format("woff")`
+    ];
     return `@font-face { font-family: "${province.numberFont}"; src: ${sources.join(',')}; font-weight: 400; font-style: normal; font-display: swap; }`;
   }).join('\n');
   document.head.appendChild(style);
@@ -1663,7 +1669,7 @@ async function exportSingleJerseyStage(stageElement, filename, action = 'downloa
   if (rect.width <= 0 || rect.height <= 0) return null;
 
   // Use uniform scale to strictly preserve natural aspect ratio without distortion
-  const scale = 3;
+  const scale = action === 'preview' ? Math.min(2, 720 / Math.max(rect.width, rect.height)) : 3;
   const width = Math.round(rect.width * scale);
   const height = Math.round(rect.height * scale);
 
@@ -2092,12 +2098,15 @@ async function submitCustomizedOrder(form) {
     message.className = 'order-form-message error';
     return;
   }
-  const orderReference = makeOrderReference();
+  if (!DNYCart.items.length) { message.textContent = 'Vui lòng thêm áo vào giỏ hàng trước khi gửi đơn.'; return; }
+  const orderReference = form.dataset.pendingReference || makeOrderReference();
+  form.dataset.pendingReference = orderReference;
   submitButton.disabled = true;
-  submitButton.textContent = 'ĐANG LƯU MẪU ÁO…';
-  message.textContent = 'Đang tạo ảnh mẫu đã chỉnh để gửi cho đội ngũ…';
+  submitButton.textContent = 'ĐANG GỬI ĐƠN HÀNG…';
+  message.textContent = 'Đang gửi thông tin và mẫu áo đã lưu trong giỏ…';
   message.className = 'order-form-message';
   try {
+    // Receiver V2 has been deployed and verified; avoid a blocking preflight per order.
     const source = form.dataset.orderSource || 'customizer';
     const sourceName = source === 'detail' ? document.getElementById('modal-custom-name') : document.getElementById('cust-name');
     const sourceNumber = source === 'detail' ? document.getElementById('modal-custom-number') : document.getElementById('cust-number');
@@ -2107,7 +2116,7 @@ async function submitCustomizedOrder(form) {
       sourceName.dispatchEvent(new Event('input', { bubbles: true }));
       sourceNumber.dispatchEvent(new Event('input', { bubbles: true }));
     }
-    const preview = await createOrderPreviewImages(source);
+    const cartOrder = DNYCart.quote();
     const payload = {
       orderReference,
       submittedAt: new Date().toISOString(),
@@ -2117,17 +2126,35 @@ async function submitCustomizedOrder(form) {
         phone: form.elements.phone.value.trim(),
         email: form.elements.email.value.trim()
       },
-      design: preview.snapshot,
-      previews: preview.images
+      schemaVersion: 2,
+      items: cartOrder.items,
+      totalQuantity: cartOrder.quantity,
+      subtotal: cartOrder.subtotal,
+      savings: cartOrder.savings,
+      priceTier: cartOrder.tier,
+      utm: DNYCart.utm,
+      notes: form.elements.notes.value.trim()
     };
-    await fetch(ORDER_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+    const controller = new AbortController();
+    const sendTimeout = setTimeout(() => controller.abort(), 45000);
+    try {
+      await fetch(ORDER_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', signal: controller.signal, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+    } finally { clearTimeout(sendTimeout); }
+    submitButton.textContent = 'ĐANG XÁC NHẬN ĐƠN…';
+    message.textContent = 'Đã gửi dữ liệu. Đang chờ hệ thống xác nhận nhận đơn…';
+    await DNYCart.confirm(ORDER_WEBHOOK_URL, orderReference, elapsed => {
+      message.textContent = 'Hệ thống đang xác nhận đơn (' + elapsed + ' giây). Vui lòng giữ trang mở, không cần gửi lại. Mã đơn: ' + orderReference;
+    });
+    DNYCart.track('Lead', { value: cartOrder.subtotal, currency: 'VND' });
+    DNYCart.clear();
+    delete form.dataset.pendingReference;
     message.innerHTML = `Đã gửi mẫu thành công. Mã đơn của bạn: <strong>${orderReference}</strong>. Đội ngũ sẽ liên hệ để xác nhận.`;
     message.className = 'order-form-message success';
     submitButton.textContent = 'ĐÃ GỬI THÔNG TIN ✓';
     form.dataset.lastOrderReference = orderReference;
   } catch (error) {
     console.error('submitCustomizedOrder error:', error);
-    message.textContent = 'Chưa thể gửi mẫu. Vui lòng kiểm tra kết nối và thử lại.';
+    message.textContent = 'Chưa xác nhận được hệ thống đã nhận đơn. Giỏ hàng được giữ lại. Vui lòng liên hệ cửa hàng kèm mã ' + orderReference + ' trước khi gửi lại.';
     message.className = 'order-form-message error';
     submitButton.disabled = false;
     submitButton.innerHTML = 'GỬI THÔNG TIN ĐẶT ÁO <span>→</span>';
@@ -2137,6 +2164,7 @@ async function submitCustomizedOrder(form) {
 window.openDetailsModal = function(slug) {
   const province = PROVINCES_DATA.find(p => p.slug === slug);
   if (!province || !detailModal) return;
+  DNYCart.track('ViewContent', {content_ids:[province.slug],content_type:'product'});
 
   const printSettings = getDefaultPrintSettings();
 
@@ -2458,6 +2486,7 @@ function populateOrderDesignOptions(selectedName) {
   const province = getOrderDesignProvince(selectedName);
   select.value = province.name;
   updateOrderDesignPreview(province.name);
+  DNYCart.track('ViewContent', { content_ids: [province.slug], content_type: 'product' });
 }
 
 window.orderJersey = function(provName) {
@@ -2677,6 +2706,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('order-design')?.addEventListener('change', event => {
     const province = getOrderDesignProvince(event.target.value);
     updateOrderDesignPreview(province.name);
+    orderForm.dataset.orderSource = 'customizer';
+    DNYCart.track('ViewContent', {content_ids:[province.slug],content_type:'product'});
     state.customizerProvince = province;
     const customizerProvinceSelect = document.getElementById('cust-province');
     if (customizerProvinceSelect) customizerProvinceSelect.value = province.slug;
@@ -3565,4 +3596,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
   positionPreview();
   mobileLayout.addEventListener?.('change', positionPreview);
+});
+
+// Multi-product selection preserves the existing customization snapshot and artwork.
+document.addEventListener('DOMContentLoaded', () => {
+  DNYCart.render();
+  const collection = document.getElementById('order-collection');
+  const continueButton = document.getElementById('cart-continue');
+  const collectionGrid = document.getElementById('order-collection-grid');
+  const search = document.getElementById('order-collection-search');
+  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  function renderOrderCollection() {
+    const matches = PROVINCES_DATA.filter(p => normalize(p.name).includes(normalize(search.value.trim())));
+    collectionGrid.replaceChildren();
+    for (const province of matches) {
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'order-collection-card';
+      const selected = document.getElementById('order-design').value === province.name;
+      button.setAttribute('aria-pressed', String(selected));
+      const images = province.images || DESIGN_ASSETS[province.slug];
+      if (images?.front) {
+        const image = document.createElement('img');
+        image.src = images.front; image.alt = 'Mẫu áo ' + province.name;
+        image.loading = 'lazy'; image.decoding = 'async';
+        button.append(image);
+      }
+      const title = document.createElement('strong'); title.textContent = province.name;
+      const action = document.createElement('span'); action.textContent = selected ? 'ĐANG CHỌN ✓' : 'CHỌN MẪU NÀY →';
+      button.append(title, action);
+      button.onclick = () => {
+        const select = document.getElementById('order-design');
+        select.value = province.name;
+        select.dispatchEvent(new Event('change', {bubbles:true}));
+        collection.hidden = true; continueButton.setAttribute('aria-expanded', 'false');
+        document.getElementById('cart-feedback').textContent = 'Đã chọn ' + province.name + '. Chọn phiên bản, size và số lượng rồi thêm vào giỏ.';
+        select.scrollIntoView({behavior:'smooth', block:'start'}); select.focus({preventScroll:true});
+      };
+      collectionGrid.append(button);
+    }
+    document.getElementById('order-collection-empty').hidden = matches.length > 0;
+  }
+  continueButton.onclick = () => {
+    collection.hidden = !collection.hidden;
+    continueButton.setAttribute('aria-expanded', String(!collection.hidden));
+    if (!collection.hidden) { renderOrderCollection(); collection.scrollIntoView({behavior:'smooth', block:'start'}); search.focus({preventScroll:true}); }
+  };
+  search.addEventListener('input', renderOrderCollection);
+  document.getElementById('order-collection-close').onclick = () => { collection.hidden = true; continueButton.setAttribute('aria-expanded','false'); continueButton.focus(); };
+  document.getElementById('cart-add').onclick = async event => {
+    const button=event.currentTarget, feedback=document.getElementById('cart-feedback');
+    const quantity=Number(document.getElementById('cart-quantity').value);
+    if (!Number.isInteger(quantity)||quantity<1||quantity>999) { feedback.textContent='Nhập số lượng nguyên từ 1 đến 999.'; return; }
+    button.disabled=true;
+    try {
+      const form=document.getElementById('order-form');
+      const source=form.dataset.orderSource || 'customizer';
+      const province=getOrderDesignProvince(form.elements.design.value);
+      state.customizerProvince=province;
+      const name=document.getElementById(source==='detail'?'modal-custom-name':'cust-name');
+      const number=document.getElementById(source==='detail'?'modal-custom-number':'cust-number');
+      if(name) { name.value=form.elements.printName.value; name.dispatchEvent(new Event('input',{bubbles:true})); }
+      if(number) { number.value=form.elements.printNumber.value; number.dispatchEvent(new Event('input',{bubbles:true})); }
+      updateCustomizerPreview();
+      const preview=await createOrderPreviewImages(source);
+      DNYCart.add({ id:crypto.randomUUID(), province:province.name, version:document.getElementById('cart-version').value, size:document.getElementById('cart-size').value, quantity, design:preview.snapshot, previews:preview.images });
+      delete form.dataset.pendingReference;
+      feedback.textContent='Đã thêm áo. Bạn có thể chọn tỉnh, phiên bản và size tiếp theo.';
+    } catch(error) { feedback.textContent='Chưa thể lưu mẫu áo. Vui lòng thử lại.'; console.error(error); }
+    finally { button.disabled=false; }
+  };
 });
