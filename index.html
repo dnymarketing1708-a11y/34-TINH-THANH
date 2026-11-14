@@ -12,7 +12,7 @@
   <title>Bộ Sưu Tập Áo Bóng Đá 34 Tỉnh Thành | Bản Sắc Việt Nam</title>
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=20261114-fast1">
+  <link rel="stylesheet" href="index.css?v=20261114-set1">
 
   <!-- Favicon -->
   <link rel="shortcut icon"
@@ -147,10 +147,11 @@
 
   <!-- SECTION 05 & 06 — 34 PROVINCE COLLECTION & FILTER -->
   <section class="pricing-section" id="pricing">
-    <h2>ĐẶT TỪ 5 ÁO – GIÁ CHỈ TỪ 199.000Đ/ÁO</h2>
-    <p>Không cần chung tỉnh thành – Không cần cùng phiên bản. Chỉ cần tổng đơn từ 5 áo để nhận giá đội nhóm!</p>
-    <div class="pricing-options"><article><h3>Bản in</h3><p>Cá nhân · 1–4 áo <strong>270.000đ/áo</strong></p><p>Giá đội nhóm · từ 5 áo <strong>199.000đ/áo</strong></p></article><article class="pricing-premium"><span>PHIÊN BẢN CAO CẤP</span><h3>Bản cao cấp</h3><p>Cá nhân · 1–4 áo <strong>300.000đ/áo</strong></p><p>Giá đội nhóm · từ 5 áo <strong>230.000đ/áo</strong></p></article></div>
-    <a class="btn-primary" href="#collection-grid-sec">CHỌN ÁO NGAY →</a>
+    <h2>ĐẶT TỪ 5 BỘ – GIÁ CHỈ TỪ 199.000Đ/BỘ</h2>
+    <p>Không cần chung tỉnh thành – Không cần cùng phiên bản. Chỉ cần tổng đơn từ 5 bộ để nhận giá đội nhóm!</p>
+    <p class="pricing-set-note"><strong>Giá áp dụng cho trọn bộ: 1 áo + 1 quần.</strong></p>
+    <div class="pricing-options"><article><h3>Bản in</h3><p>Cá nhân · 1–4 bộ <strong>270.000đ/bộ</strong></p><p>Giá đội nhóm · từ 5 bộ <strong>199.000đ/bộ</strong></p></article><article class="pricing-premium"><span>PHIÊN BẢN CAO CẤP</span><h3>Bản cao cấp</h3><p>Cá nhân · 1–4 bộ <strong>300.000đ/bộ</strong></p><p>Giá đội nhóm · từ 5 bộ <strong>230.000đ/bộ</strong></p></article></div>
+    <a class="btn-primary" href="#collection-grid-sec">CHỌN BỘ NGAY →</a>
   </section>
   <section class="collection-section" id="collection-grid-sec">
     <div class="container">
@@ -722,8 +723,8 @@
     <div class="order-form-card" role="dialog" aria-modal="true" aria-labelledby="order-form-title">
       <button class="order-form-close" type="button" aria-label="Đóng form đặt áo">×</button>
       <div class="order-form-heading">
-        <span>VN / 34 — ĐẶT ÁO THIẾT KẾ</span>
-        <h2 id="order-form-title">THÔNG TIN ĐẶT ÁO</h2>
+        <span>VN / 34 — BỘ ÁO + QUẦN</span>
+        <h2 id="order-form-title">THÔNG TIN ĐẶT BỘ ÁO + QUẦN</h2>
         <p>Điền thông tin để đội ngũ xác nhận mẫu và liên hệ với bạn.</p>
       </div>
       <form id="order-form">
@@ -741,7 +742,7 @@
           </div>
           <label class="order-field"><span>Phiên bản</span><select id="cart-version"><option value="print">Bản in</option><option value="premium">Bản cao cấp</option></select></label>
           <label class="order-field"><span>Size</span><select id="cart-size" aria-describedby="order-size-guidance"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option><option>4XL</option><option>5XL</option><option>6XL</option><option>7XL</option><option>8XL</option></select></label>
-          <label class="order-field"><span>Số lượng</span><input id="cart-quantity" type="number" min="1" max="999" value="1" step="1"></label>
+          <label class="order-field"><span>Số lượng bộ (1 áo + 1 quần)</span><input id="cart-quantity" type="number" min="1" max="999" value="1" step="1"></label>
           <fieldset class="order-print-fields order-field-wide">
             <legend>Tên + số trên áo</legend>
             <label class="order-field">
@@ -761,7 +762,7 @@
         <button type="button" class="btn-secondary" id="cart-continue" aria-expanded="false" aria-controls="order-collection">XEM BST · CHỌN THÊM TỈNH THÀNH</button>
         <section id="order-collection" class="order-collection" aria-labelledby="order-collection-title" hidden>
           <div class="order-collection-heading"><h3 id="order-collection-title">BỘ SƯU TẬP 34 TỈNH THÀNH</h3><button type="button" id="order-collection-close" aria-label="Thu gọn bộ sưu tập">Thu gọn ×</button></div>
-          <p>Xem mẫu áo và chọn tỉnh bạn muốn thêm. Các áo trong giỏ vẫn được giữ nguyên.</p>
+          <p>Xem mẫu áo và chọn tỉnh bạn muốn thêm. Các bộ trong giỏ vẫn được giữ nguyên.</p>
           <label class="order-field"><span>Tìm tỉnh / thành phố</span><input type="search" id="order-collection-search" placeholder="Nhập tên tỉnh thành…" autocomplete="off"></label>
           <div id="order-collection-grid" class="order-collection-grid"></div>
           <p id="order-collection-empty" role="status" hidden>Không tìm thấy tỉnh thành phù hợp.</p>
@@ -787,11 +788,11 @@
               placeholder="email@cuaban.com">
           </label>
 </div>
-        <label class="order-field"><span>Ghi chú đơn hàng</span><textarea name="notes" rows="3" placeholder="Chiều cao: … cm; cân nặng: … kg; vòng bụng: … cm. Ghi rõ tỉnh/mẫu nếu cần tư vấn nhiều áo." aria-describedby="order-size-guidance"></textarea></label>
+        <label class="order-field"><span>Ghi chú đơn hàng</span><textarea name="notes" rows="3" placeholder="Chiều cao: … cm; cân nặng: … kg; vòng bụng: … cm. Ghi rõ tỉnh/mẫu nếu cần tư vấn nhiều bộ." aria-describedby="order-size-guidance"></textarea></label>
         <p class="order-size-guidance" id="order-size-guidance">Trường hợp không có thông số tương thích, vui lòng để lại chiều cao + cân nặng + số đo vòng bụng ở ghi chú. DNY sẽ liên hệ tư vấn size.</p>
         <p>Phí vận chuyển sẽ được đội ngũ xác nhận; chưa cộng vào tạm tính.</p>
         <p class="order-form-message" id="order-form-message" role="status"></p>
-        <button class="order-submit" type="submit">GỬI THÔNG TIN ĐẶT ÁO <span>→</span></button>
+        <button class="order-submit" type="submit">GỬI THÔNG TIN ĐẶT BỘ ÁO + QUẦN <span>→</span></button>
       </form>
       <aside class="order-size-chart" aria-labelledby="order-size-chart-title">
         <span class="order-size-eyebrow">DNY SPORT · HƯỚNG DẪN CHỌN SIZE</span>
@@ -814,8 +815,8 @@
 
   <!-- JavaScript Application Script -->
   <script src="province-map.js?v=20260921-2"></script>
-  <script src="pricing.js?v=20261114-fast1"></script>
-  <script src="app.js?v=20261114-fast1"></script>
+  <script src="pricing.js?v=20261114-set1"></script>
+  <script src="app.js?v=20261114-set1"></script>
   <div class="share-modal" id="contact-modal" aria-hidden="true">
     <div class="share-panel contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title">
       <button class="share-close" type="button" aria-label="Đóng">×</button>

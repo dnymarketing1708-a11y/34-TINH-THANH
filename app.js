@@ -2242,7 +2242,7 @@ async function submitCustomizedOrder(form) {
     message.className = 'order-form-message error';
     return;
   }
-  if (!DNYCart.items.length) { message.textContent = 'Vui lòng thêm áo vào giỏ hàng trước khi gửi đơn.'; return; }
+  if (!DNYCart.items.length) { message.textContent = 'Vui lòng thêm bộ áo + quần vào giỏ hàng trước khi gửi đơn.'; return; }
   const orderReference = form.dataset.pendingReference || makeOrderReference();
   form.dataset.pendingReference = orderReference;
   submitButton.disabled = true;
@@ -2301,7 +2301,7 @@ async function submitCustomizedOrder(form) {
     message.textContent = 'Chưa xác nhận được hệ thống đã nhận đơn. Giỏ hàng được giữ lại. Vui lòng liên hệ cửa hàng kèm mã ' + orderReference + ' trước khi gửi lại.';
     message.className = 'order-form-message error';
     submitButton.disabled = false;
-    submitButton.innerHTML = 'GỬI THÔNG TIN ĐẶT ÁO <span>→</span>';
+    submitButton.innerHTML = 'GỬI THÔNG TIN ĐẶT BỘ <span>→</span>';
   }
 }
 
@@ -2653,7 +2653,7 @@ window.orderJersey = function(provName) {
   message.textContent = '';
   if (submitButton) {
     submitButton.disabled = false;
-    submitButton.innerHTML = 'GỬI THÔNG TIN ĐẶT ÁO <span>→</span>';
+    submitButton.innerHTML = 'GỬI THÔNG TIN ĐẶT BỘ <span>→</span>';
   }
   orderModal.classList.add('active');
   orderModal.setAttribute('aria-hidden', 'false');
@@ -3805,7 +3805,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const preview=await createOrderPreviewImages(source);
       DNYCart.add({ id:crypto.randomUUID(), province:province.name, version:document.getElementById('cart-version').value, size:document.getElementById('cart-size').value, quantity, design:preview.snapshot, previews:preview.images });
       delete form.dataset.pendingReference;
-      feedback.textContent='Đã thêm áo. Bạn có thể chọn tỉnh, phiên bản và size tiếp theo.';
+      feedback.textContent='Đã thêm bộ áo + quần. Bạn có thể chọn tỉnh, phiên bản và size tiếp theo.';
     } catch(error) { feedback.textContent='Chưa thể lưu mẫu áo. Vui lòng thử lại.'; console.error(error); }
     finally { button.disabled=false; }
   };
